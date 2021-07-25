@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import logo from './logo.svg';
 import './App.css';
 import * as authActions from "./actions/auth.actions";
- 
+import { Login, Tx } from './view'
 
 class App extends Component {
 
@@ -17,30 +17,24 @@ class App extends Component {
         </p>
 
 
-          {this.props.id ? 
-            (
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {`Bienvenida ${this.props.name} !!!`}
-              </a>
-            ):
-            (<button onClick={() => this.props.login(() => { })}>Login</button>)
-            }
+          {this.getPage()}
 
         </header>
       </div>
     );
   }
 
+  getPage = () => {
+    switch(this.props.route){
+      case 'Login': return <Login/>
+      case 'Tx': return <Tx/>
+    }
+  }
+
 }
 
-const mapStateToProps = ({ auth }) => ({
-  id: auth.id,
-  name: auth.name
+const mapStateToProps = ({ auth }) => ({ 
+  route: auth.route
 });
 
 export default connect(

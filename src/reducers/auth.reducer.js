@@ -1,7 +1,7 @@
 const initialState = {
   id: null,
   name: null,
-  appStarted: false 
+  route: 'Login' // Login, Tx 
 };
 
 export default function authReducer(state = initialState, action) {
@@ -12,7 +12,7 @@ export default function authReducer(state = initialState, action) {
       return {
         ...state,
         ...data,
-        appStarted: true
+        route: 'Tx'
       };
  
     default:

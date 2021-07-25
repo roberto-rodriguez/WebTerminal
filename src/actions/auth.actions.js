@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const login = (callback) => async dispatch => {
+export const login = (errorCallback) => async dispatch => {
     try {
         debugger;
         var result = await axios.get("/FrontTerminal/webTerminal/auth/login");
@@ -9,9 +9,8 @@ export const login = (callback) => async dispatch => {
         result = result && result.data; 
 
         dispatch({ type: "LOGIN", data: result });
-
-        callback && callback(result);
+ 
     } catch (err) {
-        callback && callback(null, err);
+        errorCallback && errorCallback(null, err);
     }
 };
