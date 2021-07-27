@@ -8,6 +8,10 @@ export default function authReducer(state = initialState, action) {
   var { type, data } = action;
 
   switch (type) { 
+    case "LOGOUT":
+      return {
+        route: 'Login'
+      };
     case "LOGIN":
       return {
         ...state,
