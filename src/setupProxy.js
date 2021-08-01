@@ -8,7 +8,8 @@ module.exports = function(app) {
         "/FrontTerminal" 
       ],
       {
-        target: "http://localhost:8085"
+        target: "http://test.girocheck.net:8085"
+        // target: "http://localhost:8085"
         // target: "http://localhost:5000"
       }
     )
