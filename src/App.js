@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import SciJqueryHelper from './scanner/SciJqueryHelper';
-import $ from "jquery";
-import logo from './vc-logo.jpg';
+import { connect } from "react-redux";  
 import parse from 'xml-parser';
 import './App.css';
 import * as authActions from "./actions/auth.actions";
